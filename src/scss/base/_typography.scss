@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as *;
+@use "sass:string" as str;
+
+body {
+  font: $font-weight-regular $font-size-labels str.unquote("/")
+    $line-height-regular $font-family-sans-serif;
+}

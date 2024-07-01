@@ -1,0 +1,52 @@
+/* ******************************************** */
+
+/* TYPOGRAPHY SYSTEM */
+
+/* ******************************************** */
+
+// Font Families:
+$font-family-sans-serif: "Karla", sans-serif;
+
+// Font Sizes:
+$font-size-labels: 1rem;
+
+// Font Weights:
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Line Heights:
+$line-height-regular: 1.5;
+
+/* ******************************************** */
+
+/* COLOR SYSTEM */
+
+/* ******************************************** */
+
+// Primary Colors:
+$color-primary-light-green: #dff1e7;
+$color-primary-medium-green: #0c7d69;
+$color-primary-red: #d73c3c;
+
+// Neutral Colors:
+$color-neutral-white: #fff;
+$color-neutral-medium-green: #87a3a6;
+$color-neutral-dark-green: #2b4246;
+
+/* ******************************************** */
+
+/* BREAKPOINT SYSTEM */
+
+/* ******************************************** */
+
+// Breakpoints Up
+$breakpoints-up: (
+  mobile: 23.438rem,
+  desktop: 90rem,
+);
+
+// Breakpoints Down
+$breakpoints-down: (
+  mobile: 23.428rem,
+  desktop: 89.9rem,
+);
