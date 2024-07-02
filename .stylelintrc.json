@@ -21,18 +21,9 @@
         "font-family",
         "font-size",
         "font-weight",
-        "letter-spacing",
         "line-height",
         "color",
-        "background-color",
-        "border-radius",
-        "margin-top",
-        "margin-right",
-        "margin-bottom",
-        "margin-left",
-        "flex-gap",
-        "column-gap",
-        "row-gap"
+        "background-color"
       ],
       { "expandShorthand": true, "recurseLonghand": true }
     ],

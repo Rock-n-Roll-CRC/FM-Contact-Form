@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.contact-form {
+  @include max-inline-size-fix(21.4rem);
+  @include logical-padding-shorthand(1.05rem, 1.47rem);
+
+  background-color: $color-neutral-white;
+  border-radius: 1rem;
+
+  &__heading {
+    margin-block-end: 1.45rem;
+    font-size: $font-size-headings;
+    color: $color-neutral-dark-green;
+    letter-spacing: -0.06rem;
+  }
+
+  &__form {
+    @include flex-shorthand($flex-direction: column, $gap: 1.5rem);
+  }
+
+  &__field {
+    @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
+  }
+
+  &__label {
+    color: $color-neutral-dark-green;
+  }
+
+  &__label-text {
+    position: relative;
+  }
+
+  &__label-text::after {
+    @include absolute-shorthand($inset-inline-end: -0.96rem);
+
+    color: $color-primary-medium-green;
+    content: "\002A";
+  }
+
+  &__input {
+    block-size: 3.2rem;
+    border: 0.01rem solid $color-neutral-medium-green;
+    border-radius: 0.5rem;
+  }
+}
