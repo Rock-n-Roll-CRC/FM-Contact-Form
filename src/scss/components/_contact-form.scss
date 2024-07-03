@@ -23,6 +23,21 @@
     @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
   }
 
+  &__field--flex-row {
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+    block-size: 3.18rem;
+    padding-inline-start: 1.8rem;
+    font-size: 1.115rem;
+    border: 0.01rem solid $color-neutral-medium-green;
+    border-radius: 0.5rem;
+  }
+
+  &__field--flex-row:not(:last-child) {
+    margin-block-end: 1rem;
+  }
+
   &__label {
     color: $color-neutral-dark-green;
   }
@@ -31,7 +46,8 @@
     position: relative;
   }
 
-  &__label-text::after {
+  &__label-text::after,
+  &__legend-text::after {
     @include absolute-shorthand($inset-inline-end: -0.96rem);
 
     color: $color-primary-medium-green;
@@ -39,8 +55,34 @@
   }
 
   &__input {
-    block-size: 3.2rem;
+    block-size: 3.18rem;
     border: 0.01rem solid $color-neutral-medium-green;
+    border-radius: 0.5rem;
+  }
+
+  &__fieldset {
+    padding: 0;
+    border: 0;
+  }
+
+  &__legend {
+    padding: 0;
+    margin-block-end: 1.05rem;
+    color: $color-neutral-dark-green;
+  }
+
+  &__legend-text {
+    position: relative;
+  }
+
+  &__radio {
+    transform: scale(1.5);
+  }
+
+  &__message {
+    block-size: 15rem;
+    resize: none;
+    border-color: $color-neutral-medium-green;
     border-radius: 0.5rem;
   }
 }

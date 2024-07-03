@@ -95,6 +95,49 @@
               class="contact-form__input"
             />
           </div>
+
+          <fieldset class="contact-form__fieldset">
+            <legend class="contact-form__legend">
+              <span class="contact-form__legend-text">Query Type</span>
+            </legend>
+
+            <div class="contact-form__field--flex-row">
+              <input
+                type="radio"
+                name="query-type"
+                id="general-enquiry"
+                class="contact-form__radio"
+              />
+              <label for="general-enquiry" class="contact-form__label"
+                >General Enquiry</label
+              >
+            </div>
+
+            <div class="contact-form__field--flex-row">
+              <input
+                type="radio"
+                name="query-type"
+                id="support-request"
+                class="contact-form__radio"
+              />
+              <label for="support-request" class="contact-form__label"
+                >Support Request</label
+              >
+            </div>
+          </fieldset>
+
+          <div class="contact-form__field">
+            <label for="message" class="contact-form__label"
+              ><span class="contact-form__label-text">Message</span></label
+            >
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              class="contact-form__message"
+            ></textarea>
+          </div>
         </form>
       </article>
     </main>
