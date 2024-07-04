@@ -8,5 +8,5 @@ body {
 main {
   @include flex-shorthand($justify-content: center);
 
-  margin-block-start: 2rem;
+  margin-block: 2rem;
 }

@@ -1,8 +1,25 @@
+/* ******************************************** */
+
+/* SHORTHAND MIXINS */
+
+/* ******************************************** */
+
+@mixin absolute-shorthand(
+  $inset-block-start: 0,
+  $inset-inline-end: 0,
+  $inset-block-end: 0,
+  $inset-inline-start: 0
+) {
+  position: absolute;
+  inset-block: $inset-block-start $inset-block-end;
+  inset-inline: $inset-inline-start $inset-inline-end;
+}
+
 @mixin flex-shorthand(
   $flex-direction: null,
+  $gap: null,
   $align-items: null,
-  $justify-content: null,
-  $gap: null
+  $justify-content: null
 ) {
   display: flex;
   flex-flow: $flex-direction nowrap;
@@ -11,27 +28,23 @@
   justify-content: $justify-content;
 }
 
+@mixin logical-padding-shorthand(
+  $padding-block-start: 0,
+  $padding-inline-start: 0,
+  $padding-block-end: 0,
+  $padding-inline-end: 0
+) {
+  padding-block: $padding-block-start $padding-block-end;
+  padding-inline: $padding-inline-start $padding-inline-end;
+}
+
+/* ******************************************** */
+
+/* FIX MIXINS */
+
+/* ******************************************** */
+
 @mixin max-inline-size-fix($max-inline-size: null) {
   inline-size: 100%;
   max-inline-size: $max-inline-size;
-}
-
-@mixin logical-padding-shorthand($padding-block: null, $padding-inline: null) {
-  padding-block: $padding-block $padding-block;
-  padding-inline: $padding-inline $padding-inline;
-}
-
-@mixin absolute-shorthand(
-  $inset-block-start: null,
-  $inset-inline-end: null,
-  $inset-block-end: null,
-  $inset-inline-start: null
-) {
-  position: absolute;
-  inset-block-start: $inset-block-start;
-  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-  inset-block-end: $inset-block-end;
-  inset-inline-start: $inset-inline-start;
-  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-  inset-inline-end: $inset-inline-end;
 }

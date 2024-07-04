@@ -3,7 +3,7 @@
 
 .contact-form {
   @include max-inline-size-fix(21.4rem);
-  @include logical-padding-shorthand(1.05rem, 1.47rem);
+  @include logical-padding-shorthand(1.05rem, 1.47rem, 1.55rem);
 
   background-color: $color-neutral-white;
   border-radius: 1rem;
@@ -25,6 +25,7 @@
 
   &__field--flex-row {
     display: flex;
+    flex-wrap: nowrap;
     gap: 1.1rem;
     align-items: center;
     block-size: 3.18rem;
@@ -83,6 +84,29 @@
     block-size: 15rem;
     resize: none;
     border-color: $color-neutral-medium-green;
+    border-radius: 0.5rem;
+  }
+
+  &__field--checkbox {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.3rem;
+    padding-inline-start: 0.4rem;
+    margin-block-start: 1rem;
+  }
+
+  &__checkbox {
+    transform: scale(1.4);
+  }
+
+  &__submit {
+    padding: 1rem 0;
+    margin-block-start: 1rem;
+    font-size: 1.13rem;
+    font-weight: $font-weight-bold;
+    color: $color-neutral-white;
+    background-color: $color-primary-medium-green;
+    border: 0;
     border-radius: 0.5rem;
   }
 }

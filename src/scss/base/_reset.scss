@@ -1,4 +1,4 @@
-/* stylelint-disable scale-unlimited/declaration-strict-value */
+/* stylelint-disable */
 
 *,
 *::before,
@@ -21,7 +21,7 @@ video,
 canvas,
 svg {
   display: block;
-  max-inline-size: 100%;
+  max-width: 100%;
 }
 
 input,
@@ -39,4 +39,9 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
 }
