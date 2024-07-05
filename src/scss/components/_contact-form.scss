@@ -3,7 +3,7 @@
 
 .contact-form {
   @include max-inline-size-fix(21.4rem);
-  @include logical-padding-shorthand(1.05rem, 1.47rem, 1.55rem);
+  @include logical-padding-shorthand(1.05rem, 1.47rem, 1.55rem, 1.47rem);
 
   background-color: $color-neutral-white;
   border-radius: 1rem;
@@ -19,46 +19,76 @@
     @include flex-shorthand($flex-direction: column, $gap: 1.5rem);
   }
 
-  &__field {
-    @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
-  }
+  &__input-field {
+    &--type-text {
+      @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
+    }
 
-  &__field--flex-row {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1.1rem;
-    align-items: center;
-    block-size: 3.18rem;
-    padding-inline-start: 1.8rem;
-    font-size: 1.115rem;
-    border: 0.01rem solid $color-neutral-medium-green;
-    border-radius: 0.5rem;
-  }
+    &--type-radio {
+      @include flex-shorthand($gap: 1.094rem, $align-items: center);
 
-  &__field--flex-row:not(:last-child) {
-    margin-block-end: 1rem;
+      padding-block: 0.7rem;
+      padding-inline-start: 1.8rem;
+      font-size: $font-size-radio;
+      border: 0.01rem solid $color-neutral-medium-green;
+      border-radius: 0.5rem;
+
+      &:not(:last-child) {
+        margin-block-end: 1rem;
+      }
+    }
+
+    &--type-textarea {
+      @include flex-shorthand(column, 0.5rem);
+    }
+
+    &--type-checkbox {
+      @include flex-shorthand($gap: 1.3rem);
+
+      padding-inline-start: 0.4rem;
+      margin-block-start: 1rem;
+    }
   }
 
   &__label {
     color: $color-neutral-dark-green;
   }
 
-  &__label-text {
+  &__label-text,
+  &__legend-text {
     position: relative;
-  }
 
-  &__label-text::after,
-  &__legend-text::after {
-    @include absolute-shorthand($inset-inline-end: -0.96rem);
+    &::after {
+      @include absolute-shorthand($inset-inline-end: -0.96rem);
 
-    color: $color-primary-medium-green;
-    content: "\002A";
+      color: $color-primary-medium-green;
+      content: "\002A";
+    }
   }
 
   &__input {
-    block-size: 3.18rem;
-    border: 0.01rem solid $color-neutral-medium-green;
-    border-radius: 0.5rem;
+    &--type-text,
+    &--type-textarea {
+      border: 0.01rem solid $color-neutral-medium-green;
+      border-radius: 0.5rem;
+    }
+
+    &--type-text {
+      padding-block: 0.78rem;
+    }
+
+    &--type-radio {
+      transform: scale(1.5);
+    }
+
+    &--type-textarea {
+      block-size: 15rem;
+      resize: none;
+    }
+
+    &--type-checkbox {
+      transform: scale(1.4);
+    }
   }
 
   &__fieldset {
@@ -68,35 +98,8 @@
 
   &__legend {
     padding: 0;
-    margin-block-end: 1.05rem;
+    margin-block-end: 1rem;
     color: $color-neutral-dark-green;
-  }
-
-  &__legend-text {
-    position: relative;
-  }
-
-  &__radio {
-    transform: scale(1.5);
-  }
-
-  &__message {
-    block-size: 15rem;
-    resize: none;
-    border-color: $color-neutral-medium-green;
-    border-radius: 0.5rem;
-  }
-
-  &__field--checkbox {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1.3rem;
-    padding-inline-start: 0.4rem;
-    margin-block-start: 1rem;
-  }
-
-  &__checkbox {
-    transform: scale(1.4);
   }
 
   &__submit {

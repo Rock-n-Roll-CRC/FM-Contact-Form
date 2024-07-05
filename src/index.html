@@ -58,7 +58,9 @@
         <h1 class="contact-form__heading">Contact Us</h1>
 
         <form action="#" class="contact-form__form">
-          <div class="contact-form__field">
+          <div
+            class="contact-form__input-field contact-form__input-field--type-text"
+          >
             <label for="first-name" class="contact-form__label"
               ><span class="contact-form__label-text">First Name</span></label
             >
@@ -66,11 +68,13 @@
               type="text"
               name="first-name"
               id="first-name"
-              class="contact-form__input"
+              class="contact-form__input contact-form__input--type-text"
             />
           </div>
 
-          <div class="contact-form__field">
+          <div
+            class="contact-form__input-field contact-form__input-field--type-text"
+          >
             <label for="last-name" class="contact-form__label"
               ><span class="contact-form__label-text">Last Name</span></label
             >
@@ -78,11 +82,13 @@
               type="text"
               name="last-name"
               id="last-name"
-              class="contact-form__input"
+              class="contact-form__input contact-form__input--type-text"
             />
           </div>
 
-          <div class="contact-form__field">
+          <div
+            class="contact-form__input-field contact-form__input-field--type-text"
+          >
             <label for="email" class="contact-form__label"
               ><span class="contact-form__label-text"
                 >Email Address</span
@@ -92,7 +98,7 @@
               type="text"
               name="email"
               id="email"
-              class="contact-form__input"
+              class="contact-form__input contact-form__input--type-text"
             />
           </div>
 
@@ -101,24 +107,28 @@
               <span class="contact-form__legend-text">Query Type</span>
             </legend>
 
-            <div class="contact-form__field--flex-row">
+            <div
+              class="contact-form__input-field contact-form__input-field--type-radio"
+            >
               <input
                 type="radio"
                 name="query-type"
                 id="general-enquiry"
-                class="contact-form__radio"
+                class="contact-form__input contact-form__input--type-radio"
               />
               <label for="general-enquiry" class="contact-form__label"
                 >General Enquiry</label
               >
             </div>
 
-            <div class="contact-form__field--flex-row">
+            <div
+              class="contact-form__input-field contact-form__input-field--type-radio"
+            >
               <input
                 type="radio"
                 name="query-type"
                 id="support-request"
-                class="contact-form__radio"
+                class="contact-form__input contact-form__input--type-radio"
               />
               <label for="support-request" class="contact-form__label"
                 >Support Request</label
@@ -126,7 +136,9 @@
             </div>
           </fieldset>
 
-          <div class="contact-form__field">
+          <div
+            class="contact-form__input-field contact-form__input-field--type-textarea"
+          >
             <label for="message" class="contact-form__label"
               ><span class="contact-form__label-text">Message</span></label
             >
@@ -135,16 +147,18 @@
               id="message"
               cols="30"
               rows="10"
-              class="contact-form__message"
+              class="contact-form__input contact-form__input--type-textarea"
             ></textarea>
           </div>
 
-          <div class="contact-form__field--checkbox">
+          <div
+            class="contact-form__input-field contact-form__input-field--type-checkbox"
+          >
             <input
               type="checkbox"
               name="contact-consent"
               id="contact-consent"
-              class="contact-form__checkbox"
+              class="contact-form__input contact-form__input--type-checkbox"
             />
             <label for="contact-consent" class="contact-form__label"
               ><span class="contact-form__label-text"

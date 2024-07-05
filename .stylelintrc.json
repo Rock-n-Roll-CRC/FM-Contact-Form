@@ -46,6 +46,7 @@
       { "severity": "warning" }
     ],
     "plugin/use-logical-units": [true, { "severity": "warning" }],
-    "rem-over-px/rem-over-px": true
+    "rem-over-px/rem-over-px": true,
+    "max-nesting-depth": 3
   }
 }

@@ -5,10 +5,10 @@
 /* ******************************************** */
 
 @mixin absolute-shorthand(
-  $inset-block-start: 0,
-  $inset-inline-end: 0,
-  $inset-block-end: 0,
-  $inset-inline-start: 0
+  $inset-block-start: auto,
+  $inset-inline-end: auto,
+  $inset-block-end: auto,
+  $inset-inline-start: auto
 ) {
   position: absolute;
   inset-block: $inset-block-start $inset-block-end;
@@ -16,7 +16,7 @@
 }
 
 @mixin flex-shorthand(
-  $flex-direction: null,
+  $flex-direction: row,
   $gap: null,
   $align-items: null,
   $justify-content: null
