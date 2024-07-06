@@ -17,14 +17,7 @@
   "rules": {
     "plugin/declaration-block-no-ignored-properties": true,
     "scale-unlimited/declaration-strict-value": [
-      [
-        "font-family",
-        "font-size",
-        "font-weight",
-        "line-height",
-        "color",
-        "background-color"
-      ],
+      ["font-family", "font-weight", "color", "background-color"],
       { "expandShorthand": true, "recurseLonghand": true }
     ],
     "plugin/no-low-performance-animation-properties": true,

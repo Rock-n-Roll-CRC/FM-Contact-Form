@@ -2,6 +2,6 @@
 @use "sass:string" as str;
 
 body {
-  font: $font-weight-regular $font-size-labels str.unquote("/")
-    $line-height-regular $font-family-sans-serif;
+  font: $font-weight-regular $font-size-label str.unquote("/") 1.5
+    $font-family-sans-serif;
 }

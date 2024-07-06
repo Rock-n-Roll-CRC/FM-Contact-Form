@@ -38,6 +38,11 @@
   padding-inline: $padding-inline-start $padding-inline-end;
 }
 
+@mixin color-shorthand($color: null, $background-color: null) {
+  color: $color;
+  background-color: $background-color;
+}
+
 /* ******************************************** */
 
 /* FIX MIXINS */
