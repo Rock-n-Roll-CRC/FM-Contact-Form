@@ -28,6 +28,7 @@
       @include flex-shorthand($gap: 1.094rem, $align-items: center);
       @include logical-padding-shorthand(0.7rem, 1.8rem, 0.7rem);
 
+      cursor: pointer;
       border: 0.01rem solid $color-neutral-medium-green;
       border-radius: 0.5rem;
 
@@ -51,10 +52,12 @@
   }
 
   &__label {
+    inline-size: fit-content;
     color: $color-neutral-dark-green;
 
     &--type-radio {
       font-size: 1.115rem;
+      cursor: pointer;
     }
   }
 
@@ -79,9 +82,17 @@
 
     &--type-text {
       padding-block: 0.78rem;
+      cursor: pointer;
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: $color-primary-medium-green;
+        }
+      }
     }
 
     &--type-radio {
+      cursor: pointer;
       transform: scale(1.5);
     }
 
@@ -111,7 +122,14 @@
 
     padding-block: 1.14rem;
     font: $font-weight-bold 1.13rem $font-family-sans-serif;
+    cursor: pointer;
     border: 0;
     border-radius: 0.5rem;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-neutral-dark-green;
+      }
+    }
   }
 }
