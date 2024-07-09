@@ -35,6 +35,12 @@
       &:not(:last-child) {
         margin-block-end: 1rem;
       }
+
+      &:has(.contact-form__input:checked) {
+        background-color: $color-primary-light-green;
+        border-color: $color-primary-medium-green;
+        box-shadow: 0 0 0.07rem $color-primary-medium-green;
+      }
     }
 
     &--type-textarea {
@@ -87,11 +93,19 @@
       @media (hover: hover) {
         &:hover {
           border-color: $color-primary-medium-green;
+          box-shadow: 0 0 0.07rem $color-primary-medium-green;
         }
+      }
+
+      &:focus {
+        border-color: $color-primary-medium-green;
+        outline: 0;
+        box-shadow: 0 0 0.07rem $color-primary-medium-green;
       }
     }
 
     &--type-radio {
+      accent-color: $color-primary-medium-green;
       cursor: pointer;
       transform: scale(1.5);
     }
@@ -102,6 +116,7 @@
     }
 
     &--type-checkbox {
+      accent-color: $color-primary-medium-green;
       transform: scale(1.4);
     }
   }
