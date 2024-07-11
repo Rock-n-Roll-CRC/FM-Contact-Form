@@ -5,14 +5,43 @@
   @include max-inline-size-fix(21.4rem);
   @include logical-padding-shorthand(1.05rem, 1.47rem, 1.55rem, 1.47rem);
 
+  position: relative;
   background-color: $color-neutral-white;
   border-radius: 1rem;
+
+  &__status-bar {
+    @include absolute-shorthand($inset-block-start: 0, $inset-inline-start: 0);
+    @include flex-shorthand(column, 1rem);
+    @include logical-padding-shorthand(1.7rem, 1.5rem, 1.7rem, 1.5rem);
+
+    background-color: $color-neutral-dark-green;
+    border-radius: 0.5rem;
+    transform: translateY(-90%);
+  }
+
+  &__heading-block {
+    @include flex-shorthand($gap: 0.75rem);
+  }
+
+  &__icon {
+    max-inline-size: 1.5rem;
+    max-block-size: 1.5rem;
+  }
 
   &__heading {
     margin-block-end: 1.45rem;
     font-size: 2rem;
     color: $color-neutral-dark-green;
     letter-spacing: -0.06rem;
+
+    &--for-status-bar {
+      font-weight: $font-weight-bold;
+      color: $color-neutral-white;
+    }
+  }
+
+  &__description {
+    color: $color-neutral-white;
   }
 
   &__form {
