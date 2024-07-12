@@ -83,6 +83,9 @@
               id="first-name"
               class="contact-form__input contact-form__input--type-text"
             />
+            <p class="contact-form__input-validation-description">
+              This field is required
+            </p>
           </div>
 
           <div
@@ -97,10 +100,13 @@
               id="last-name"
               class="contact-form__input contact-form__input--type-text"
             />
+            <p class="contact-form__input-validation-description">
+              This field is required
+            </p>
           </div>
 
           <div
-            class="contact-form__input-field contact-form__input-field--type-text"
+            class="contact-form__input-field contact-form__input-field--type-email"
           >
             <label for="email" class="contact-form__label"
               ><span class="contact-form__label-text"
@@ -108,11 +114,14 @@
               ></label
             >
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
-              class="contact-form__input contact-form__input--type-text"
+              class="contact-form__input contact-form__input--type-email"
             />
+            <p class="contact-form__input-validation-description">
+              Please enter a valid email address
+            </p>
           </div>
 
           <fieldset class="contact-form__input-fieldset">
@@ -151,6 +160,10 @@
                 >Support Request</label
               >
             </div>
+
+            <p class="contact-form__input-validation-description">
+              Please select a query type
+            </p>
           </fieldset>
 
           <div
@@ -166,22 +179,32 @@
               rows="10"
               class="contact-form__input contact-form__input--type-textarea"
             ></textarea>
+            <p class="contact-form__input-validation-description">
+              This field is required
+            </p>
           </div>
 
           <div
             class="contact-form__input-field contact-form__input-field--type-checkbox"
           >
-            <input
-              type="checkbox"
-              name="contact-consent"
-              id="contact-consent"
-              class="contact-form__input contact-form__input--type-checkbox"
-            />
-            <label for="contact-consent" class="contact-form__label"
-              ><span class="contact-form__label-text"
-                >I consent to being contacted by the team</span
-              ></label
+            <div class="contact-form__checkbox-container">
+              <input
+                type="checkbox"
+                name="contact-consent"
+                id="contact-consent"
+                class="contact-form__input contact-form__input--type-checkbox"
+              />
+              <label for="contact-consent" class="contact-form__label"
+                ><span class="contact-form__label-text"
+                  >I consent to being contacted by the team</span
+                ></label
+              >
+            </div>
+            <p
+              class="contact-form__input-validation-description contact-form__input-validation-description--type-checkbox"
             >
+              To submit this form, please consent to being contacted
+            </p>
           </div>
 
           <button type="submit" class="contact-form__submit-button">

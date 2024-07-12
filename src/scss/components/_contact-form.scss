@@ -10,13 +10,20 @@
   border-radius: 1rem;
 
   &__status-bar {
-    @include absolute-shorthand($inset-block-start: 0, $inset-inline-start: 0);
-    @include flex-shorthand(column, 1rem);
-    @include logical-padding-shorthand(1.7rem, 1.5rem, 1.7rem, 1.5rem);
+    display: none;
 
-    background-color: $color-neutral-dark-green;
-    border-radius: 0.5rem;
-    transform: translateY(-90%);
+    &--status-active {
+      @include absolute-shorthand(
+        $inset-block-start: 0,
+        $inset-inline-start: 0
+      );
+      @include flex-shorthand(column, 1rem);
+      @include logical-padding-shorthand(1.7rem, 1.5rem, 1.7rem, 1.5rem);
+
+      background-color: $color-neutral-dark-green;
+      border-radius: 0.5rem;
+      transform: translateY(-90%);
+    }
   }
 
   &__heading-block {
@@ -48,8 +55,19 @@
     @include flex-shorthand($flex-direction: column, $gap: 1.5rem);
   }
 
+  &__checkbox-container {
+    @include flex-shorthand($gap: 1.3rem);
+
+    padding-inline-start: 0.4rem;
+
+    &--validation-failed-margin {
+      margin-block-end: 0.5rem;
+    }
+  }
+
   &__input-field {
-    &--type-text {
+    &--type-text,
+    &--type-email {
       @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
     }
 
@@ -61,7 +79,7 @@
       border: 0.01rem solid $color-neutral-medium-green;
       border-radius: 0.5rem;
 
-      &:not(:last-child) {
+      &:not(:last-of-type) {
         margin-block-end: 1rem;
       }
 
@@ -72,17 +90,18 @@
       }
     }
 
+    &--type-checkbox {
+      margin-block-end: 1rem;
+    }
+
     &--type-textarea {
       @include flex-shorthand(column, 0.5rem);
 
       margin-block-end: 1rem;
     }
 
-    &--type-checkbox {
-      @include flex-shorthand($gap: 1.3rem);
-
-      padding-inline-start: 0.4rem;
-      margin-block-end: 1rem;
+    &--validation-failed-margin {
+      margin-block-end: 0.5rem;
     }
   }
 
@@ -110,12 +129,14 @@
 
   &__input {
     &--type-text,
+    &--type-email,
     &--type-textarea {
       border: 0.01rem solid $color-neutral-medium-green;
       border-radius: 0.5rem;
     }
 
-    &--type-text {
+    &--type-text,
+    &--type-email {
       padding-block: 0.78rem;
       cursor: pointer;
 
@@ -147,6 +168,23 @@
     &--type-checkbox {
       accent-color: $color-primary-medium-green;
       transform: scale(1.4);
+    }
+
+    &--validation-error {
+      border-color: $color-primary-red;
+    }
+  }
+
+  &__input-validation-description {
+    display: none;
+
+    &--validation-error {
+      display: block;
+      color: $color-primary-red;
+
+      &--type-checkbox {
+        margin-block-end: 1rem;
+      }
     }
   }
 
