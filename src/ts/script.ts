@@ -28,8 +28,11 @@ const inputTextArea: HTMLTextAreaElement | null = document.querySelector(
 const inputCheckbox: HTMLInputElement | null = document.querySelector(
   ".contact-form__input--type-checkbox",
 );
-const statusBar: HTMLDivElement | null = document.querySelector(
+const statusBar: HTMLDialogElement | null = document.querySelector(
   ".contact-form__status-bar",
+);
+const statusBarClose: HTMLButtonElement | null = document.querySelector(
+  ".contact-form__close-button",
 );
 
 sumbutBtn?.addEventListener("click", (e: Event) => {
@@ -135,8 +138,11 @@ sumbutBtn?.addEventListener("click", (e: Event) => {
     document.querySelectorAll(".contact-form__input--validation-error")
       .length === 0
   ) {
-    statusBar?.classList.add("contact-form__status-bar--status-active");
-  } else {
-    statusBar?.classList.remove("contact-form__status-bar--status-active");
+    statusBar?.showModal();
   }
+});
+
+statusBarClose?.addEventListener("click", () => {
+  statusBar?.close();
+  console.log(statusBar, statusBarClose);
 });
