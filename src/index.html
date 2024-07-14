@@ -1,3 +1,11 @@
+<!-- contact-form__status-bar -> contact-form__alert -->
+<!-- contact-form__heading-block ->  contact-form__icon-caption -->
+<!-- contact-form__heading--for-status-bar -> contact-form__caption -->
+<!-- contact-form__label-text -> deleted -->
+<!-- contact-form__input-validation-description -> contact-form__description--type-validation-error -->
+<!-- contact-form__legend-text -> deleted -->
+<!-- contact-form__checkbox-container -> contact-form__input-label -->
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,14 +63,14 @@
   <body>
     <main>
       <article class="contact-form">
-        <dialog class="contact-form__status-bar">
+        <dialog class="contact-form__alert">
           <button class="contact-form__close-button">&#10005;</button>
 
-          <div class="contact-form__heading-block">
+          <div class="contact-form__icon-caption">
             <svg class="contact-form__icon">
               <use href="./assets/icons/icons.svg#success-check" />
             </svg>
-            <p class="contact-form__heading--for-status-bar">Message Sent!</p>
+            <p class="contact-form__caption">Message Sent!</p>
           </div>
 
           <p class="contact-form__description">
@@ -77,7 +85,7 @@
             class="contact-form__input-field contact-form__input-field--type-text"
           >
             <label for="first-name" class="contact-form__label"
-              ><span class="contact-form__label-text">First Name</span></label
+              >First Name</label
             >
             <input
               type="text"
@@ -85,7 +93,9 @@
               id="first-name"
               class="contact-form__input contact-form__input--type-text"
             />
-            <p class="contact-form__input-validation-description">
+            <p
+              class="contact-form__description contact-form__description--type-validation-error"
+            >
               This field is required
             </p>
           </div>
@@ -93,16 +103,16 @@
           <div
             class="contact-form__input-field contact-form__input-field--type-text"
           >
-            <label for="last-name" class="contact-form__label"
-              ><span class="contact-form__label-text">Last Name</span></label
-            >
+            <label for="last-name" class="contact-form__label">Last Name</label>
             <input
               type="text"
               name="last-name"
               id="last-name"
               class="contact-form__input contact-form__input--type-text"
             />
-            <p class="contact-form__input-validation-description">
+            <p
+              class="contact-form__description contact-form__description--type-validation-error"
+            >
               This field is required
             </p>
           </div>
@@ -110,26 +120,22 @@
           <div
             class="contact-form__input-field contact-form__input-field--type-email"
           >
-            <label for="email" class="contact-form__label"
-              ><span class="contact-form__label-text"
-                >Email Address</span
-              ></label
-            >
+            <label for="email" class="contact-form__label">Email Address</label>
             <input
               type="email"
               name="email"
               id="email"
               class="contact-form__input contact-form__input--type-email"
             />
-            <p class="contact-form__input-validation-description">
+            <p
+              class="contact-form__description contact-form__description--type-validation-error"
+            >
               Please enter a valid email address
             </p>
           </div>
 
           <fieldset class="contact-form__input-fieldset">
-            <legend class="contact-form__legend">
-              <span class="contact-form__legend-text">Query Type</span>
-            </legend>
+            <legend class="contact-form__legend">Query Type</legend>
 
             <div
               class="contact-form__input-field contact-form__input-field--type-radio"
@@ -163,7 +169,9 @@
               >
             </div>
 
-            <p class="contact-form__input-validation-description">
+            <p
+              class="contact-form__description contact-form__description--type-validation-error"
+            >
               Please select a query type
             </p>
           </fieldset>
@@ -171,9 +179,7 @@
           <div
             class="contact-form__input-field contact-form__input-field--type-textarea"
           >
-            <label for="message" class="contact-form__label"
-              ><span class="contact-form__label-text">Message</span></label
-            >
+            <label for="message" class="contact-form__label">Message</label>
             <textarea
               name="message"
               id="message"
@@ -181,7 +187,9 @@
               rows="10"
               class="contact-form__input contact-form__input--type-textarea"
             ></textarea>
-            <p class="contact-form__input-validation-description">
+            <p
+              class="contact-form__description contact-form__description--type-validation-error"
+            >
               This field is required
             </p>
           </div>
@@ -189,7 +197,7 @@
           <div
             class="contact-form__input-field contact-form__input-field--type-checkbox"
           >
-            <div class="contact-form__checkbox-container">
+            <div class="contact-form__input-label">
               <input
                 type="checkbox"
                 name="contact-consent"
@@ -197,21 +205,17 @@
                 class="contact-form__input contact-form__input--type-checkbox"
               />
               <label for="contact-consent" class="contact-form__label"
-                ><span class="contact-form__label-text"
-                  >I consent to being contacted by the team</span
-                ></label
+                >I consent to being contacted by the team</label
               >
             </div>
             <p
-              class="contact-form__input-validation-description contact-form__input-validation-description--type-checkbox"
+              class="contact-form__description contact-form__description--type-validation-error"
             >
               To submit this form, please consent to being contacted
             </p>
           </div>
 
-          <button type="submit" class="contact-form__submit-button">
-            Submit
-          </button>
+          <button class="contact-form__submit-button">Submit</button>
         </form>
       </article>
     </main>
