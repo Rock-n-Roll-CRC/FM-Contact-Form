@@ -1,11 +1,3 @@
-<!-- contact-form__status-bar -> contact-form__alert -->
-<!-- contact-form__heading-block ->  contact-form__icon-caption -->
-<!-- contact-form__heading--for-status-bar -> contact-form__caption -->
-<!-- contact-form__label-text -> deleted -->
-<!-- contact-form__input-validation-description -> contact-form__description--type-validation-error -->
-<!-- contact-form__legend-text -> deleted -->
-<!-- contact-form__checkbox-container -> contact-form__input-label -->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -63,159 +55,136 @@
   <body>
     <main>
       <article class="contact-form">
-        <dialog class="contact-form__alert">
-          <button class="contact-form__close-button">&#10005;</button>
+        <aside class="alert-wrapper">
+          <dialog class="alert">
+            <button class="alert__close-button">&#10005;</button>
 
-          <div class="contact-form__icon-caption">
-            <svg class="contact-form__icon">
-              <use href="./assets/icons/icons.svg#success-check" />
-            </svg>
-            <p class="contact-form__caption">Message Sent!</p>
-          </div>
+            <div class="alert__confirmation-message">
+              <svg class="alert__icon">
+                <use href="./assets/icons/icons.svg#success-check" />
+              </svg>
+              <p class="alert__caption">Message Sent!</p>
+            </div>
 
-          <p class="contact-form__description">
-            Thanks for completing the form. We'll be in touch soon!
-          </p>
-        </dialog>
+            <p class="alert__thanks-message">
+              Thanks for completing the form. We'll be in touch soon!
+            </p>
+          </dialog>
+        </aside>
 
         <h1 class="contact-form__heading">Contact Us</h1>
 
-        <form action="#" class="contact-form__form">
-          <div
-            class="contact-form__input-field contact-form__input-field--type-text"
-          >
-            <label for="first-name" class="contact-form__label"
-              >First Name</label
-            >
-            <input
-              type="text"
-              name="first-name"
-              id="first-name"
-              class="contact-form__input contact-form__input--type-text"
-            />
-            <p
-              class="contact-form__description contact-form__description--type-validation-error"
-            >
-              This field is required
-            </p>
-          </div>
-
-          <div
-            class="contact-form__input-field contact-form__input-field--type-text"
-          >
-            <label for="last-name" class="contact-form__label">Last Name</label>
-            <input
-              type="text"
-              name="last-name"
-              id="last-name"
-              class="contact-form__input contact-form__input--type-text"
-            />
-            <p
-              class="contact-form__description contact-form__description--type-validation-error"
-            >
-              This field is required
-            </p>
-          </div>
-
-          <div
-            class="contact-form__input-field contact-form__input-field--type-email"
-          >
-            <label for="email" class="contact-form__label">Email Address</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              class="contact-form__input contact-form__input--type-email"
-            />
-            <p
-              class="contact-form__description contact-form__description--type-validation-error"
-            >
-              Please enter a valid email address
-            </p>
-          </div>
-
-          <fieldset class="contact-form__input-fieldset">
-            <legend class="contact-form__legend">Query Type</legend>
-
-            <div
-              class="contact-form__input-field contact-form__input-field--type-radio"
-            >
-              <input
-                type="radio"
-                name="query-type"
-                id="general-enquiry"
-                class="contact-form__input contact-form__input--type-radio"
-              />
-              <label
-                for="general-enquiry"
-                class="contact-form__label contact-form__label--type-radio"
-                >General Enquiry</label
+        <form action="#" class="contact-form__body">
+          <ul class="contact-form__input-field-list">
+            <div class="contact-form__input-field">
+              <label for="first-name" class="contact-form__label"
+                >First Name</label
               >
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                class="contact-form__input"
+              />
+
+              <p class="contact-form__validation-error-message">
+                This field is required
+              </p>
             </div>
 
-            <div
-              class="contact-form__input-field contact-form__input-field--type-radio"
-            >
-              <input
-                type="radio"
-                name="query-type"
-                id="support-request"
-                class="contact-form__input contact-form__input--type-radio"
-              />
-              <label
-                for="support-request"
-                class="contact-form__label contact-form__label--type-radio"
-                >Support Request</label
+            <div class="contact-form__input-field">
+              <label for="last-name" class="contact-form__label"
+                >Last Name</label
               >
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                class="contact-form__input"
+              />
+
+              <p class="contact-form__description">This field is required</p>
             </div>
 
-            <p
-              class="contact-form__description contact-form__description--type-validation-error"
-            >
-              Please select a query type
-            </p>
-          </fieldset>
+            <div class="contact-form__input-field">
+              <label for="email" class="contact-form__label"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="contact-form__input"
+              />
 
-          <div
-            class="contact-form__input-field contact-form__input-field--type-textarea"
-          >
-            <label for="message" class="contact-form__label">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              class="contact-form__input contact-form__input--type-textarea"
-            ></textarea>
-            <p
-              class="contact-form__description contact-form__description--type-validation-error"
-            >
-              This field is required
-            </p>
-          </div>
+              <p class="contact-form__description">
+                Please enter a valid email address
+              </p>
+            </div>
 
-          <div
-            class="contact-form__input-field contact-form__input-field--type-checkbox"
-          >
-            <div class="contact-form__input-label">
+            <fieldset class="contact-form__input-fieldset">
+              <legend class="contact-form__legend">Query Type</legend>
+
+              <div class="contact-form__input-field">
+                <input
+                  type="radio"
+                  name="query-type"
+                  id="general-enquiry"
+                  class="contact-form__input"
+                />
+                <label for="general-enquiry" class="contact-form__label"
+                  >General Enquiry</label
+                >
+              </div>
+
+              <div class="contact-form__input-field">
+                <input
+                  type="radio"
+                  name="query-type"
+                  id="support-request"
+                  class="contact-form__input"
+                />
+                <label for="support-request" class="contact-form__label"
+                  >Support Request</label
+                >
+              </div>
+
+              <p class="contact-form__description">
+                Please select a query type
+              </p>
+            </fieldset>
+
+            <div class="contact-form__input-field">
+              <label for="message" class="contact-form__label">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                class="contact-form__input"
+              ></textarea>
+
+              <p class="contact-form__description">This field is required</p>
+            </div>
+
+            <div class="contact-form__input-field">
               <input
                 type="checkbox"
                 name="contact-consent"
                 id="contact-consent"
-                class="contact-form__input contact-form__input--type-checkbox"
+                class="contact-form__input"
               />
               <label for="contact-consent" class="contact-form__label"
                 >I consent to being contacted by the team</label
               >
-            </div>
-            <p
-              class="contact-form__description contact-form__description--type-validation-error"
-            >
-              To submit this form, please consent to being contacted
-            </p>
-          </div>
 
-          <button class="contact-form__submit-button">Submit</button>
+              <p class="contact-form__description">
+                To submit this form, please consent to being contacted
+              </p>
+            </div>
+          </ul>
+
+          <button class="contact-form__button">Submit</button>
         </form>
       </article>
     </main>

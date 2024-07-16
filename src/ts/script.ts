@@ -138,7 +138,7 @@ sumbutBtn?.addEventListener("click", (e: Event) => {
     document.querySelectorAll(".contact-form__input--validation-error")
       .length === 0
   ) {
-    statusBar?.showModal();
+    statusBar?.show();
   }
 });
 
