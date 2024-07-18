@@ -59,13 +59,13 @@
         <!-- Form Submit Success Alert -->
         <aside class="alert-wrapper">
           <dialog class="alert">
-            <button class="alert__close-button">&#10005;</button>
+            <button class="alert__button">&#10005;</button>
 
-            <div class="alert__message">
-              <svg class="alert__message-icon">
+            <div class="alert__icon-caption">
+              <svg class="alert__icon">
                 <use href="./assets/icons/icons.svg#success-check" />
               </svg>
-              <p class="alert__message-caption">Message Sent!</p>
+              <p class="alert__caption">Message Sent!</p>
             </div>
 
             <p class="alert__description">
@@ -77,7 +77,12 @@
         <!-- Title -->
         <h1 class="contact-form__title">Contact Us</h1>
 
-        <form action="#" class="contact-form__form" novalidate>
+        <form
+          action="#"
+          class="contact-form__form"
+          autocomplete="off"
+          novalidate
+        >
           <ul class="contact-form__input-field-list">
             <li class="contact-form__input-field-list-item">
               <!-- First Name Input Field -->
@@ -89,7 +94,7 @@
                   type="text"
                   name="first-name"
                   id="first-name"
-                  class="contact-form__text-input"
+                  class="contact-form__input contact-form__input--type-text"
                   required
                 />
 
@@ -109,7 +114,7 @@
                   type="text"
                   name="last-name"
                   id="last-name"
-                  class="contact-form__text-input"
+                  class="contact-form__input contact-form__input--type-text"
                   required
                 />
 
@@ -129,7 +134,7 @@
                   type="email"
                   name="email-address"
                   id="email-address"
-                  class="contact-form__email-input"
+                  class="contact-form__input contact-form__input--type-email"
                   required
                 />
 
@@ -146,34 +151,41 @@
                   Query Type
                 </legend>
 
-                <ul class="contact-form__input-field-list" aria-required="true">
+                <ul
+                  class="contact-form__input-field-list contact-form__input-field-list--type-radio"
+                  aria-required="true"
+                >
                   <li class="contact-form__input-field-list-item">
-                    <div class="contact-form__input-field">
+                    <div
+                      class="contact-form__input-field contact-form__input-field--type-radio"
+                    >
                       <input
                         type="radio"
                         name="query-type"
                         id="general-enquiry"
-                        class="contact-form__radio-input"
+                        class="contact-form__input contact-form__input--type-radio"
                       />
                       <label
                         for="general-enquiry"
-                        class="contact-form__input-label"
+                        class="contact-form__input-label contact-form__input-label--type-radio"
                         >General Enquiry</label
                       >
                     </div>
                   </li>
 
                   <li class="contact-form__input-field-list-item">
-                    <div class="contact-form__input-field">
+                    <div
+                      class="contact-form__input-field contact-form__input-field--type-radio"
+                    >
                       <input
                         type="radio"
                         name="query-type"
                         id="support-request"
-                        class="contact-form__radio-input"
+                        class="contact-form__input--type-radio"
                       />
                       <label
                         for="support-request"
-                        class="contact-form__input-label"
+                        class="contact-form__input-label contact-form__input-label--type-radio"
                         >Support Request</label
                       >
                     </div>
@@ -197,7 +209,7 @@
                   id="message"
                   cols="30"
                   rows="10"
-                  class="contact-form__textarea-input"
+                  class="contact-form__input contact-form__input--type-textarea"
                   required
                 ></textarea>
 
@@ -209,19 +221,21 @@
 
             <li class="contact-form__input-field-item">
               <!-- Contact Consent Input Field -->
-              <div class="contact-form__input-field">
+              <div
+                class="contact-form__input-field contact-form__input-field--type-checkbox"
+              >
                 <input
                   type="checkbox"
                   name="contact-consent"
                   id="contact-consent"
-                  class="contact-form__checkbox-input"
+                  class="contact-form__input contact-form__input--type-checkbox"
                   required
                 />
                 <label for="contact-consent" class="contact-form__input-label"
                   >I consent to being contacted by the team</label
                 >
 
-                <p class="contact-form__input-validation-error-message">
+                <p class="contact-form__input-validation-message">
                   To submit this form, please consent to being contacted
                 </p>
               </div>
@@ -229,7 +243,7 @@
           </ul>
 
           <!-- Form Submit Button -->
-          <button type="submit" class="submit-button">Submit</button>
+          <button type="submit" class="button">Submit</button>
         </form>
       </article>
     </main>

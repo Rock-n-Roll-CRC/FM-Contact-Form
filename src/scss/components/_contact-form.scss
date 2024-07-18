@@ -8,74 +8,26 @@
   background-color: $color-neutral-white;
   border-radius: 1rem;
 
-  &__status-bar[open] {
-    @include absolute-shorthand(
-      $inset-block-start: 0,
-      $inset-inline-start: 50%
-    );
-    @include flex-shorthand(column, 1rem);
-    @include logical-padding-shorthand(1.7rem, 1.5rem, 1.7rem, 1.5rem);
-
-    background-color: $color-neutral-dark-green;
-    border: 0;
-    border-radius: 0.5rem;
-    transform: translateX(-50%);
-  }
-
-  &__close-button {
-    @include absolute-shorthand($inset-inline-end: 5%, $inset-block-start: 10%);
-
-    padding: 0;
-    color: $color-neutral-white;
-    cursor: pointer;
-    background-color: transparent;
-    border: 0;
-  }
-
-  &__heading-block {
-    @include flex-shorthand($gap: 0.75rem);
-  }
-
-  &__icon {
-    max-inline-size: 1.5rem;
-    max-block-size: 1.5rem;
-  }
-
-  &__heading {
+  &__title {
     margin-block-end: 1.45rem;
     font-size: 2rem;
     color: $color-neutral-dark-green;
     letter-spacing: -0.06rem;
-
-    &--for-status-bar {
-      font-weight: $font-weight-bold;
-      color: $color-neutral-white;
-    }
   }
 
-  &__description {
-    color: $color-neutral-white;
-  }
-
-  &__form {
+  &__input-field-list {
     @include flex-shorthand($flex-direction: column, $gap: 1.5rem);
-  }
 
-  &__checkbox-container {
-    @include flex-shorthand($gap: 1.3rem);
+    padding: 0;
+    list-style: none;
 
-    padding-inline-start: 0.4rem;
-
-    &--validation-failed-margin {
-      margin-block-end: 0.5rem;
+    &--type-radio {
+      gap: 1rem;
     }
   }
 
   &__input-field {
-    &--type-text,
-    &--type-email {
-      @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
-    }
+    @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
 
     &--type-radio {
       @include flex-shorthand($gap: 1.094rem, $align-items: center);
@@ -84,52 +36,24 @@
       cursor: pointer;
       border: 0.01rem solid $color-neutral-medium-green;
       border-radius: 0.5rem;
-
-      &:not(:last-of-type) {
-        margin-block-end: 1rem;
-      }
-
-      &:has(.contact-form__input:checked) {
-        background-color: $color-primary-light-green;
-        border-color: $color-primary-medium-green;
-        box-shadow: 0 0 0.07rem $color-primary-medium-green;
-      }
     }
 
     &--type-checkbox {
-      margin-block-end: 1rem;
-    }
-
-    &--type-textarea {
-      @include flex-shorthand(column, 0.5rem);
-
-      margin-block-end: 1rem;
-    }
-
-    &--validation-failed-margin {
-      margin-block-end: 0.5rem;
+      @include flex-shorthand($flex-direction: row, $gap: 1.4rem);
+      @include logical-padding-shorthand(
+        $padding-block-start: 1rem,
+        $padding-inline-start: 0.3rem
+      );
     }
   }
 
-  &__label {
+  &__input-label {
     inline-size: fit-content;
     color: $color-neutral-dark-green;
 
     &--type-radio {
       font-size: 1.115rem;
       cursor: pointer;
-    }
-  }
-
-  &__label-text,
-  &__legend-text {
-    position: relative;
-
-    &::after {
-      @include absolute-shorthand($inset-inline-end: -0.96rem);
-
-      color: $color-primary-medium-green;
-      content: "\002A";
     }
   }
 
@@ -176,21 +100,17 @@
       transform: scale(1.4);
     }
 
-    &--validation-error {
+    &--invalidated {
       border-color: $color-primary-red;
     }
   }
 
-  &__input-validation-description {
+  &__input-validation-error-message {
     display: none;
 
-    &--validation-error {
+    &--visible {
       display: block;
       color: $color-primary-red;
-
-      &--type-checkbox {
-        margin-block-end: 1rem;
-      }
     }
   }
 
@@ -199,25 +119,9 @@
     border: 0;
   }
 
-  &__legend {
+  &__input-fieldset-legend {
     padding: 0;
     margin-block-end: 1rem;
     color: $color-neutral-dark-green;
-  }
-
-  &__submit-button {
-    @include color-shorthand($color-neutral-white, $color-primary-medium-green);
-
-    padding-block: 1.14rem;
-    font: $font-weight-bold 1.13rem $font-family-sans-serif;
-    cursor: pointer;
-    border: 0;
-    border-radius: 0.5rem;
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: $color-neutral-dark-green;
-      }
-    }
   }
 }
