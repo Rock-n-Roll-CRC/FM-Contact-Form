@@ -1,148 +1,102 @@
-const radioFields: NodeListOf<HTMLDivElement> = document.querySelectorAll(
-  ".contact-form__input-field--type-radio",
-);
-
-radioFields.forEach((radioField: HTMLDivElement) => {
-  radioField.addEventListener("click", () => {
-    (radioField.firstElementChild as HTMLInputElement | null)?.click();
-  });
-});
-
-const sumbutBtn: HTMLButtonElement | null = document.querySelector(
-  ".contact-form__submit-button",
-);
-const inputsText: NodeListOf<HTMLInputElement> = document.querySelectorAll(
-  ".contact-form__input--type-text",
-);
-const inputEmail: HTMLInputElement | null = document.querySelector(
-  ".contact-form__input--type-email",
-);
-const inputFieldset: HTMLFieldSetElement | null = document.querySelector(
+// HTML Elements
+const radioFieldset: HTMLFieldSetElement | null = document.querySelector(
   ".contact-form__input-fieldset",
 );
-const inputRadios: NodeListOf<HTMLInputElement> | undefined =
-  inputFieldset?.querySelectorAll(".contact-form__input--type-radio");
-const inputTextArea: HTMLTextAreaElement | null = document.querySelector(
-  ".contact-form__input--type-textarea",
+
+const submitButton: HTMLButtonElement | null = document.querySelector(
+  ".contact-form__button--type-submit",
 );
-const inputCheckbox: HTMLInputElement | null = document.querySelector(
+const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(
+  ".contact-form__input",
+);
+const emailInput: HTMLInputElement | null = document.querySelector(
+  ".contact-form__input--type-email",
+);
+const radioInputs: NodeListOf<HTMLInputElement> | undefined =
+  radioFieldset?.querySelectorAll(".contact-form__input--type-radio");
+const checkboxInput: HTMLInputElement | null = document.querySelector(
   ".contact-form__input--type-checkbox",
 );
-const statusBar: HTMLDialogElement | null = document.querySelector(
-  ".contact-form__status-bar",
+const formSubmittedAlert: HTMLDialogElement | null = document.querySelector(
+  ".alert--type-form-submitted",
 );
-const statusBarClose: HTMLButtonElement | null = document.querySelector(
-  ".contact-form__close-button",
+const contactForm: HTMLFormElement | null = document.querySelector(
+  ".contact-form__body",
 );
 
-sumbutBtn?.addEventListener("click", (e: Event) => {
-  e.preventDefault();
-
-  inputsText.forEach((inputText: HTMLInputElement): void => {
-    if (inputText.value.length === 0) {
-      inputText.classList.add("contact-form__input--validation-error");
-      inputText.parentElement
-        ?.querySelector(".contact-form__input-validation-description")
-        ?.classList.add(
-          "contact-form__input-validation-description--validation-error",
-        );
-    } else {
-      inputText.classList.remove("contact-form__input--validation-error");
-      inputText.parentElement
-        ?.querySelector(".contact-form__input-validation-description")
-        ?.classList.remove(
-          "contact-form__input-validation-description--validation-error",
-        );
-    }
-  });
-
-  if (!inputEmail?.value.match(/\S+@\S+\.\S+/g)) {
-    inputEmail?.classList.add("contact-form__input--validation-error");
-    inputEmail?.parentElement
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.add(
-        "contact-form__input-validation-description--validation-error",
-      );
-  } else {
-    inputEmail.classList.remove("contact-form__input--validation-error");
-    inputEmail.parentElement
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.remove(
-        "contact-form__input-validation-description--validation-error",
-      );
-  }
-
-  if (
-    inputRadios &&
-    Array.from(inputRadios).every(
-      (inputRadio: HTMLInputElement): boolean => !inputRadio.checked,
-    )
-  ) {
-    inputFieldset
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.add(
-        "contact-form__input-validation-description--validation-error",
-      );
-    inputFieldset
-      ?.querySelector(".contact-form__input-field:last-of-type")
-      ?.classList.add("contact-form__input-field--validation-failed-margin");
-  } else {
-    inputFieldset
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.remove(
-        "contact-form__input-validation-description--validation-error",
-      );
-  }
-
-  if (inputTextArea?.value.length === 0) {
-    inputTextArea.classList.add("contact-form__input--validation-error");
-    inputTextArea.parentElement
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.add(
-        "contact-form__input-validation-description--validation-error",
-      );
-  } else {
-    inputTextArea?.classList.remove("contact-form__input--validation-error");
-    inputTextArea?.parentElement
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.remove(
-        "contact-form__input-validation-description--validation-error",
-      );
-  }
-
-  if (!inputCheckbox?.checked) {
-    inputCheckbox?.classList.add("contact-form__input--validation-error");
-    inputCheckbox
-      ?.closest(".contact-form__input-field--type-checkbox")
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.add(
-        "contact-form__input-validation-description--validation-error",
-      );
-    inputCheckbox?.parentElement?.classList.add(
-      "contact-form__checkbox-container--validation-failed-margin",
-    );
-  } else {
-    inputCheckbox.classList.remove("contact-form__input--validation-error");
-    inputCheckbox
-      .closest(".contact-form__input-field--type-checkbox")
-      ?.querySelector(".contact-form__input-validation-description")
-      ?.classList.remove(
-        "contact-form__input-validation-description--validation-error",
-      );
-    inputCheckbox.parentElement?.classList.remove(
-      "contact-form__checkbox-contair--validation-failed-margin",
-    );
-  }
-
-  if (
-    document.querySelectorAll(".contact-form__input--validation-error")
-      .length === 0
-  ) {
-    statusBar?.show();
+// Event Handlers
+// Activating Radios on field click
+radioFieldset?.addEventListener("click", (e: MouseEvent): void => {
+  if (e.target instanceof Element) {
+    if (e.target.classList.contains("contact-form__input-field--type-radio"))
+      (
+        e.target.querySelector(
+          ".contact-form__input--type-radio",
+        ) as HTMLInputElement
+      ).click();
   }
 });
 
-statusBarClose?.addEventListener("click", () => {
-  statusBar?.close();
-  console.log(statusBar, statusBarClose);
+// Form Submit
+submitButton?.addEventListener("click", (e: MouseEvent): void => {
+  e.preventDefault();
+
+  // Hiding all validation error messages
+  document
+    .querySelectorAll(".contact-form__input-validation-error-message")
+    .forEach((message: Element): void => {
+      message.classList.remove(
+        "contact-form__input-validation-error-message--visible",
+      );
+    });
+
+  // Checking for empty inputs
+  inputs.forEach((input: HTMLInputElement): void => {
+    if (input.value === "")
+      input.parentElement
+        ?.querySelector(".contact-form__input-validation-error-message")
+        ?.classList.add(
+          "contact-form__input-validation-error-message--visible",
+        );
+  });
+
+  // Validating email input field
+  if (
+    !emailInput?.value.match(
+      /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/,
+    )
+  )
+    emailInput?.parentElement
+      ?.querySelector(".contact-form__input-validation-error-message")
+      ?.classList.add("contact-form__input-validation-error-message--visible");
+
+  // Validating radio input field
+  if (
+    radioInputs &&
+    Array.from(radioInputs).every(
+      (radioInput: HTMLInputElement): boolean => !radioInput.checked,
+    )
+  )
+    radioFieldset
+      ?.querySelector(".contact-form__input-validation-error-message")
+      ?.classList.add("contact-form__input-validation-error-message--visible");
+
+  // Validating checkbox input field
+  if (!checkboxInput?.checked)
+    checkboxInput?.parentElement?.parentElement
+      ?.querySelector(".contact-form__input-validation-error-message")
+      ?.classList.add("contact-form__input-validation-error-message--visible");
+
+  // Showing and closing alert
+  if (
+    !document.querySelector(
+      ".contact-form__input-validation-error-message--visible",
+    )
+  ) {
+    formSubmittedAlert?.show();
+    contactForm?.reset();
+    setTimeout((): void => {
+      formSubmittedAlert?.close();
+    }, 2000);
+  }
 });
