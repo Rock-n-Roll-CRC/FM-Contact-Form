@@ -28,6 +28,11 @@
   justify-content: $justify-content;
 }
 
+@mixin max-size-shorthand($max-inline-size, $max-block-size) {
+  max-inline-size: $max-inline-size;
+  max-block-size: $max-block-size;
+}
+
 @mixin logical-padding-shorthand(
   $padding-block-start: 0,
   $padding-inline-start: 0,
