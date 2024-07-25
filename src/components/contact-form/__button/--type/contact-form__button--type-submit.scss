@@ -1,0 +1,20 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../../scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts/mixins" as *;
+
+.contact-form__button--type-submit {
+  @include color-shorthand($color-neutral-white, $color-primary-medium-green);
+
+  inline-size: 100%;
+  padding-block: 1.14rem;
+  font: $font-weight-bold 1.13rem $font-family-sans-serif;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.5rem;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-neutral-dark-green;
+    }
+  }
+}

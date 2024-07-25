@@ -2,6 +2,9 @@
 @use "../../../scss/abstracts/variables" as *;
 @use "../../../scss/abstracts/mixins" as *;
 
-.alert__description {
-  color: $color-neutral-white;
+.contact-form__input-fieldset {
+  @include flex-shorthand($flex-direction: column, $gap: 0.5rem);
+
+  padding: 0;
+  border: 0;
 }

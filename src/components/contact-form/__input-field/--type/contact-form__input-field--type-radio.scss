@@ -1,0 +1,17 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../../scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts/mixins" as *;
+
+.contact-form__input-field--type-radio {
+  @include flex-shorthand($gap: 1.094rem, $align-items: center);
+  @include logical-padding-shorthand(0.7rem, 1.8rem, 0.7rem);
+
+  cursor: pointer;
+  border: 0.01rem solid $color-neutral-medium-green;
+  border-radius: 0.5rem;
+
+  &:has(.contact-form__input--type-radio:checked) {
+    background-color: $color-primary-light-green;
+    box-shadow: 0 0 0.07rem $color-primary-medium-green;
+  }
+}

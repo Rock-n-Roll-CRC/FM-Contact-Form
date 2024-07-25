@@ -1,0 +1,9 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../../scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts/mixins" as *;
+
+.contact-form__input--type-radio {
+  accent-color: $color-primary-medium-green;
+  cursor: pointer;
+  transform: scale(1.5);
+}

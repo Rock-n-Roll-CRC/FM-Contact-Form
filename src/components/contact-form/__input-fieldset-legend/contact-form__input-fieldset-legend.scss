@@ -1,0 +1,17 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../scss/abstracts/variables" as *;
+@use "../../../scss/abstracts/mixins" as *;
+
+.contact-form__input-fieldset-legend {
+  position: relative;
+  padding: 0;
+  margin-block-end: 1rem;
+  color: $color-neutral-dark-green;
+
+  &::after {
+    @include absolute-shorthand($inset-inline-end: -0.96rem);
+
+    color: $color-primary-medium-green;
+    content: "\002A";
+  }
+}

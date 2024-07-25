@@ -1,0 +1,10 @@
+@use "../../scss/abstracts/variables" as *;
+@use "../../scss/abstracts/mixins" as *;
+
+.contact-form {
+  @include max-inline-size-fix(21.4rem);
+  @include logical-padding-shorthand(1.05rem, 1.47rem, 1.55rem, 1.47rem);
+
+  background-color: $color-neutral-white;
+  border-radius: 1rem;
+}

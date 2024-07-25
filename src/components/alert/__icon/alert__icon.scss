@@ -1,5 +1,6 @@
-@use "../../scss/abstracts/variables" as *;
-@use "../../scss/abstracts/mixins" as *;
+/* stylelint-disable selector-class-pattern */
+@use "../../../scss/abstracts/variables" as *;
+@use "../../../scss/abstracts/mixins" as *;
 
 .alert__icon {
   @include max-size-shorthand(1.5rem, 1.5rem);

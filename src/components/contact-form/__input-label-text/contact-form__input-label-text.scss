@@ -1,0 +1,14 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../scss/abstracts/variables" as *;
+@use "../../../scss/abstracts/mixins" as *;
+
+.contact-form__input-label-text {
+  position: relative;
+
+  &::after {
+    @include absolute-shorthand($inset-inline-end: -0.96rem);
+
+    color: $color-primary-medium-green;
+    content: "\002A";
+  }
+}

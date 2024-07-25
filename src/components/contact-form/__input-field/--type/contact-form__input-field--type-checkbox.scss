@@ -1,0 +1,10 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../../scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts/mixins" as *;
+
+.contact-form__input-field--type-checkbox {
+  @include logical-padding-shorthand(
+    $padding-block-start: 1rem,
+    $padding-inline-start: 0.3rem
+  );
+}

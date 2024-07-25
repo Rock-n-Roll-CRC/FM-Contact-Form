@@ -2,6 +2,6 @@
 @use "../../../scss/abstracts/variables" as *;
 @use "../../../scss/abstracts/mixins" as *;
 
-.alert__description {
-  color: $color-neutral-white;
+.contact-form__checkbox-input-wrapper {
+  @include flex-shorthand($gap: 1.4rem);
 }

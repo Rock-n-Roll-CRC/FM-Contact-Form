@@ -2,6 +2,7 @@
 @use "../../../scss/abstracts/variables" as *;
 @use "../../../scss/abstracts/mixins" as *;
 
-.alert__description {
-  color: $color-neutral-white;
+.contact-form__input-label {
+  inline-size: fit-content;
+  color: $color-neutral-dark-green;
 }

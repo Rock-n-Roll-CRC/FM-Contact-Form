@@ -1,0 +1,10 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../../scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts/mixins" as *;
+
+.contact-form__input--type-textarea {
+  block-size: 15rem;
+  resize: none;
+  border: 0.01rem solid $color-neutral-medium-green;
+  border-radius: 0.5rem;
+}

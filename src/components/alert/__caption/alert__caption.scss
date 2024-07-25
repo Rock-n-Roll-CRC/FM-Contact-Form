@@ -1,3 +1,7 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../scss/abstracts/variables" as *;
+@use "../../../scss/abstracts/mixins" as *;
+
 .alert__caption {
   font-weight: $font-weight-bold;
   color: $color-neutral-white;

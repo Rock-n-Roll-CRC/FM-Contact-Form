@@ -1,0 +1,11 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../scss/abstracts/variables" as *;
+@use "../../../scss/abstracts/mixins" as *;
+
+.contact-form__input-field-list {
+  @include flex-shorthand($flex-direction: column, $gap: 1.5rem);
+
+  padding: 0;
+  margin-block-end: 2.5rem;
+  list-style: none;
+}

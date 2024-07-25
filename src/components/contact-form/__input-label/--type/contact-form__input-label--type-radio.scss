@@ -1,0 +1,8 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../../scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts/mixins" as *;
+
+.contact-form__input-label--type-radio {
+  font-size: 1.115rem;
+  cursor: pointer;
+}
