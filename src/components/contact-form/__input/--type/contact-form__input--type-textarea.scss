@@ -7,4 +7,8 @@
   resize: none;
   border: 0.01rem solid $color-neutral-medium-green;
   border-radius: 0.5rem;
+
+  @include media-up-shorthand(desktop) {
+    block-size: 6.57rem;
+  }
 }

@@ -2,11 +2,8 @@
 @use "../../../../scss/abstracts/variables" as *;
 @use "../../../../scss/abstracts/mixins" as *;
 
-.contact-form__input-field-list--type-radio {
-  gap: 1rem;
-  margin-block-end: 0;
-
+.contact-form__input-field-list-item--type-name {
   @include media-up-shorthand(desktop) {
-    flex-direction: row;
+    flex: 1;
   }
 }

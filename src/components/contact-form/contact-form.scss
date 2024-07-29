@@ -7,4 +7,15 @@
 
   background-color: $color-neutral-white;
   border-radius: 1rem;
+
+  @include media-up-shorthand(desktop) {
+    @include logical-padding-shorthand(
+      $padding-block-start: 2.05rem,
+      $padding-block-end: 2.45rem,
+      $padding-inline-start: 2.5rem,
+      $padding-inline-end: 2.5rem
+    );
+
+    max-inline-size: 46rem;
+  }
 }

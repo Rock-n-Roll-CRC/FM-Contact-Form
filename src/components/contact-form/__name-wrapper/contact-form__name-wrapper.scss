@@ -1,0 +1,11 @@
+/* stylelint-disable selector-class-pattern */
+@use "../../../scss/abstracts/variables" as *;
+@use "../../../scss/abstracts/mixins" as *;
+
+.contact-form__name-wrapper {
+  @include flex-shorthand($flex-direction: column, $gap: 1.48rem);
+
+  @include media-up-shorthand(desktop) {
+    @include flex-shorthand($gap: 1rem);
+  }
+}

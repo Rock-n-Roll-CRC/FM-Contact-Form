@@ -9,4 +9,8 @@ main {
   @include flex-shorthand($justify-content: center);
 
   margin-block: 2rem;
+
+  @include media-up-shorthand(desktop) {
+    margin-block: 8rem;
+  }
 }

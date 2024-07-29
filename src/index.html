@@ -85,49 +85,55 @@
           novalidate
         >
           <ul class="contact-form__input-field-list">
-            <li class="contact-form__input-field-list-item">
-              <!-- First Name Input Field -->
-              <div class="contact-form__input-field">
-                <label for="first-name" class="contact-form__input-label"
-                  ><span class="contact-form__input-label-text"
-                    >First Name</span
-                  ></label
-                >
-                <input
-                  type="text"
-                  name="first-name"
-                  id="first-name"
-                  class="contact-form__input contact-form__input--type-text"
-                  required
-                />
+            <div class="contact-form__name-wrapper">
+              <li
+                class="contact-form__input-field-list-item contact-form__input-field-list-item--type-name"
+              >
+                <!-- First Name Input Field -->
+                <div class="contact-form__input-field">
+                  <label for="first-name" class="contact-form__input-label"
+                    ><span class="contact-form__input-label-text"
+                      >First Name</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    class="contact-form__input contact-form__input--type-text"
+                    required
+                  />
 
-                <p class="contact-form__input-validation-error-message">
-                  This field is required
-                </p>
-              </div>
-            </li>
+                  <p class="contact-form__input-validation-error-message">
+                    This field is required
+                  </p>
+                </div>
+              </li>
 
-            <li class="contact-form__input-field-list-item">
-              <!-- Last Name Input Field -->
-              <div class="contact-form__input-field">
-                <label for="last-name" class="contact-form__input-label"
-                  ><span class="contact-form__input-label-text"
-                    >Last Name</span
-                  ></label
-                >
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  class="contact-form__input contact-form__input--type-text"
-                  required
-                />
+              <li
+                class="contact-form__input-field-list-item contact-form__input-field-list-item--type-name"
+              >
+                <!-- Last Name Input Field -->
+                <div class="contact-form__input-field">
+                  <label for="last-name" class="contact-form__input-label"
+                    ><span class="contact-form__input-label-text"
+                      >Last Name</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    class="contact-form__input contact-form__input--type-text"
+                    required
+                  />
 
-                <p class="contact-form__input-validation-error-message">
-                  This field is required
-                </p>
-              </div>
-            </li>
+                  <p class="contact-form__input-validation-error-message">
+                    This field is required
+                  </p>
+                </div>
+              </li>
+            </div>
 
             <li class="contact-form__input-field-list-item">
               <!-- Email Address Input Field -->
@@ -162,7 +168,9 @@
                   class="contact-form__input-field-list contact-form__input-field-list--type-radio"
                   aria-required="true"
                 >
-                  <li class="contact-form__input-field-list-item">
+                  <li
+                    class="contact-form__input-field-list-item contact-form__input-field-list-item--type-radio"
+                  >
                     <div
                       class="contact-form__input-field contact-form__input-field--type-radio"
                     >
@@ -180,7 +188,9 @@
                     </div>
                   </li>
 
-                  <li class="contact-form__input-field-list-item">
+                  <li
+                    class="contact-form__input-field-list-item contact-form__input-field-list-item--type-radio"
+                  >
                     <div
                       class="contact-form__input-field contact-form__input-field--type-radio"
                     >

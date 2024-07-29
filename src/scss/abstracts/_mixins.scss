@@ -1,3 +1,6 @@
+/* stylelint-disable scss/no-global-function-names */
+@use "./variables" as *;
+
 /* ******************************************** */
 
 /* SHORTHAND MIXINS */
@@ -46,6 +49,18 @@
 @mixin color-shorthand($color: null, $background-color: null) {
   color: $color;
   background-color: $background-color;
+}
+
+@mixin media-up-shorthand($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin media-down-shorthand($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
 }
 
 /* ******************************************** */
