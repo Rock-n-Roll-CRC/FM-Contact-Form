@@ -1,0 +1,17 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+body {
+  background-color: $color-primary-light-green;
+}
+
+main {
+  @include flex-shorthand($justify-content: center);
+
+  padding-inline: 1rem;
+  margin-block: 2rem;
+
+  @include media-up-shorthand(desktop) {
+    margin-block: 8rem;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+
+    /* Strictness: */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Transpiling with TypeScript: */
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "rootDir": "./src/ts",
+    "outDir": "./public",
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "newLine": "lf",
+
+    /* Code Running In The DOM: */
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
+  },
+  "exclude": ["./eslint.config.mjs", "./public"]
+}

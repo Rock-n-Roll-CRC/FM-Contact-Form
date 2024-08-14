@@ -1,0 +1,5 @@
+@use "../settings" as *;
+
+body {
+  font: $font-weight-regular 1rem / 1.5 $font-family-sans-serif;
+}

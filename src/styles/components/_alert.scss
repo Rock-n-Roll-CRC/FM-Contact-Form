@@ -1,0 +1,32 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.alert {
+  @include absolute-shorthand($inset-block-start: 0, $inset-inline-start: 50%);
+  @include flex-shorthand(column, 1rem);
+  @include color-shorthand($color-neutral-white, $color-neutral-dark-green);
+  @include logical-padding-shorthand(1.7rem, 1.5rem, 1.7rem, 1.5rem);
+
+  z-index: 1000;
+  min-inline-size: 16rem;
+  border: 0;
+  border-radius: 0.5rem;
+  transition: transform 1s;
+  transform: translate(-50%, -100%);
+
+  &[open] {
+    transform: translate(-50%, 15%);
+  }
+
+  &__icon-caption {
+    @include flex-shorthand($gap: 0.75rem, $align-items: center);
+  }
+
+  &__icon {
+    @include max-size-shorthand(1.5rem, 1.5rem);
+  }
+
+  &__caption {
+    font-weight: $font-weight-bold;
+  }
+}

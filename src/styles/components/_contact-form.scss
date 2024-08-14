@@ -1,0 +1,225 @@
+@use "../settings" as *;
+@use "../tools" as *;
+
+.contact-form {
+  @include max-inline-size-tweak(21.4rem);
+  @include logical-padding-shorthand(1.05rem, 1.48rem, 1.55rem, 1.48rem);
+  @include color-shorthand($color-neutral-dark-green, $color-neutral-white);
+
+  border-radius: 1rem;
+
+  @include media-up-shorthand(desktop) {
+    @include logical-padding-shorthand(2.05rem, 2.5rem, 2.45rem, 2.5rem);
+
+    max-inline-size: 46rem;
+  }
+
+  /* Title: */
+  &__title {
+    margin-block-end: 1.45rem;
+    font-size: 2rem;
+    letter-spacing: -0.06rem;
+  }
+
+  /* Input Field List: */
+  &__input-field-list {
+    @include flex-shorthand(column, 1.5rem);
+
+    padding: 0;
+    margin-block-end: 2.5rem;
+    list-style: none;
+
+    @include media-up-shorthand(desktop) {
+      @include grid-shorthand(null, 1fr 1fr, 1.5rem, 1rem);
+    }
+  }
+
+  /* Input Fields: */
+  &__input-field {
+    &--type-text,
+    &--type-email,
+    &--type-textarea,
+    &--type-checkbox {
+      @include flex-shorthand(column, 0.5rem);
+    }
+
+    &--type-radio {
+      @include flex-shorthand($gap: 0.9rem, $align-items: center);
+      @include logical-padding-shorthand(0.67rem, 1.6rem, 0.67rem, 1.6rem);
+
+      cursor: pointer;
+      border: 0.01rem solid $color-neutral-medium-green;
+      border-radius: 0.5rem;
+
+      /* stylelint-disable-next-line selector-class-pattern */
+      &:has(.contact-form__input--type-radio:checked) {
+        background-color: $color-primary-light-green;
+        box-shadow: 0 0 0.1rem $color-primary-medium-green;
+      }
+    }
+
+    &--type-checkbox {
+      @include grid-shorthand(null, auto 1fr, null, 1.16rem, center);
+      @include logical-padding-shorthand(
+        $padding-block-start: 1rem,
+        $padding-inline-start: 0.2rem
+      );
+    }
+
+    @include media-up-shorthand(desktop) {
+      &--type-email,
+      &--type-textarea,
+      &--type-checkbox {
+        grid-column: span 2;
+      }
+
+      &--type-radio {
+        flex: 1;
+      }
+    }
+  }
+
+  /* Input Labels: */
+  &__input-label {
+    inline-size: fit-content;
+
+    &--type-radio {
+      font-size: 1.115rem;
+      cursor: pointer;
+    }
+  }
+
+  /* Input Label Text: */
+  /* stylelint-disable-next-line selector-class-pattern */
+  &__input-field:has(.contact-form__input[required]) &__input-label-text,
+  &__input-fieldset[aria-required="true"] &__input-fieldset-legend {
+    position: relative;
+
+    &::after {
+      @include absolute-shorthand($inset-inline-end: -0.96rem);
+
+      color: $color-primary-medium-green;
+      content: "\002A";
+    }
+  }
+
+  /* Inputs: */
+  &__input {
+    cursor: pointer;
+
+    &--type-radio {
+      @include size-shorthand(1.2rem, 1.2rem);
+    }
+
+    &--type-textarea {
+      block-size: 15rem;
+      line-height: 1.5;
+      resize: none;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &--type-checkbox {
+      @include size-shorthand(1.124rem, 1.124rem);
+    }
+
+    &--type-text,
+    &--type-email,
+    &--type-textarea {
+      @include logical-padding-shorthand(0.71rem, 1.5rem, 0.71rem, 1.5rem);
+
+      font-size: 1.1rem;
+      border: 0.01rem solid $color-neutral-medium-green;
+      border-radius: 0.5rem;
+
+      @media (hover: hover) {
+        &:hover {
+          box-shadow: 0 0 0.1rem $color-primary-medium-green;
+        }
+      }
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0.1rem $color-primary-medium-green;
+      }
+    }
+
+    &--type-radio,
+    &--type-checkbox {
+      accent-color: $color-primary-medium-green;
+    }
+
+    &--invalidated {
+      border-color: $color-primary-red;
+    }
+
+    @include media-up-shorthand(desktop) {
+      &--type-textarea {
+        block-size: 6.5rem;
+      }
+    }
+  }
+
+  /* Input Validation Error Message: */
+  &__input-validation-error-message {
+    display: none;
+    grid-column: span 2;
+    color: $color-primary-red;
+    cursor: default;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  /* Input Field Group: */
+  &__input-field-group {
+    @include flex-shorthand(column, 1rem);
+
+    @include media-up-shorthand(desktop) {
+      grid-column: span 2;
+    }
+  }
+
+  /* Input Fieldset: */
+  &__input-fieldset {
+    @include flex-shorthand(column, 1.05rem);
+
+    padding: 0;
+    border: 0;
+
+    @include media-up-shorthand(desktop) {
+      flex-direction: row;
+    }
+  }
+
+  /* Input Fieldset Legend: */
+  /* stylelint-disable-next-line no-descending-specificity */
+  &__input-fieldset-legend {
+    padding: 0;
+    margin-block-end: 1rem;
+    cursor: default;
+  }
+
+  /* Submit Button: */
+  &__submit-button {
+    @include color-shorthand($color-neutral-white, $color-primary-medium-green);
+
+    inline-size: 100%;
+    padding-block: 1.16rem;
+    font: $font-weight-bold 1.13rem $font-family-sans-serif;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0.5rem;
+    /* stylelint-disable-next-line plugin/no-low-performance-animation-properties */
+    transition: background-color 0.15s;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-neutral-dark-green;
+      }
+    }
+  }
+}

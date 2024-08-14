@@ -1,0 +1,76 @@
+{
+  "name": "fm-contact-form",
+  "version": "1.0.0",
+  "description": "Form with several input types and validation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
+    "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "watch:assets": "onchange \"src/assets/**/*\" -- npm run copy:assets",
+    "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
+    "watch:sass": "sass --watch src/styles:public",
+    "watch:ts": "tsc --watch",
+    "build:sass": "sass src/styles:public",
+    "build:ts": "tsc",
+    "serve": "browser-sync start --server public --files public",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all copy:html build:*",
+    "postbuild": "postcss public/*.css -u autoprefixer cssnano -r --map",
+    "start": "npm-run-all copy --parallel watch serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rock-n-Roll-CRC/FM-Contact-Form.git"
+  },
+  "keywords": [
+    "frontend-mentor",
+    "contact-form",
+    "coding-challenge"
+  ],
+  "author": "Danil_Dikhtyar <danil.dikhtyar@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rock-n-Roll-CRC/FM-Contact-Form/issues"
+  },
+  "homepage": "https://github.com/Rock-n-Roll-CRC/FM-Contact-Form#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.8.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "postcss": "^8.4.40",
+    "prettier": "3.3.3",
+    "stylelint": "^16.8.1",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-sass-guidelines": "^12.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-high-performance-animation": "^1.10.0",
+    "stylelint-plugin-defensive-css": "^1.0.4",
+    "stylelint-plugin-logical-css": "^1.2.1",
+    "stylelint-rem-over-px": "^1.0.1",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.2",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^7.0.4",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.77.8",
+    "stylelint-declaration-strict-value": "^1.10.6",
+    "stylelint-no-unsupported-browser-features": "^8.0.1"
+  },
+  "type": "module"
+}

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="Frontend Mentor, Contact form, Challenge solution"
+    />
+    <meta
+      name="description"
+      content='Danil_Dikhtyar&apos;s solution to the "Contact form" challenge designed by Frontend Mentor. The page contains a form with several input types and validation.'
+    />
+    <meta name="author" content="Danil_Dikhtyar" />
+
+    <!-- Open Graph Meta Data -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Frontend Mentor | Contact form" />
+    <meta
+      property="og:description"
+      content='Danil_Dikhtyar&apos;s solution to the "Contact form" challenge designed by Frontend Mentor. The page contains a form with several input types and validation.'
+    />
+    <meta property="og:image" content="./designs/desktop-preview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="1056" />
+    <meta
+      property="og:image:alt"
+      content="A minimalist contact us form on the pastel green background."
+    />
+    <meta property="og:url" content="https://fm-contact-form-dd.netlify.app/" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="Rock_n_Roll_CRC" />
+
+    <!-- Webpage Title & Favicon Icons -->
+    <title>Frontend Mentor | Contact form</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/icons/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/icons/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/icons/favicon/site.webmanifest" />
+
+    <!-- Linking Styles -->
+    <link rel="stylesheet" href="./main.css" />
+
+    <!-- Linking Scripts -->
+    <script type="module" src="./utils.js" defer></script>
+    <script type="module" src="./dom.js" defer></script>
+
+    <!-- Linking Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="preload"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <!-- Contact Form -->
+      <article class="contact-form">
+        <!-- Form Submitted Alert -->
+        <aside class="contact-form__alert-wrapper">
+          <dialog
+            class="alert contact-form__alert contact-form__alert--type-form-validated"
+          >
+            <div class="alert__icon-caption">
+              <svg class="alert__icon">
+                <use href="./assets/icons/icons.svg#success-check" />
+              </svg>
+              <p class="alert__caption">Message Sent!</p>
+            </div>
+
+            <p class="alert__description">
+              Thanks for completing the form. We'll be in touch soon!
+            </p>
+          </dialog>
+        </aside>
+
+        <!-- Title -->
+        <h1 class="contact-form__title">Contact Us</h1>
+
+        <!-- Form -->
+        <form
+          action="#"
+          class="contact-form__form"
+          autocomplete="off"
+          novalidate
+        >
+          <!-- Input Field List -->
+          <ul class="contact-form__input-field-list">
+            <!-- First Name Input Field -->
+            <li
+              class="contact-form__input-field contact-form__input-field--type-text"
+            >
+              <label for="first-name" class="contact-form__input-label"
+                ><span class="contact-form__input-label-text"
+                  >First Name</span
+                ></label
+              >
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                class="contact-form__input contact-form__input--type-text"
+                required
+                aria-describedby="first-name-validation-error-message"
+              />
+
+              <p
+                class="contact-form__input-validation-error-message"
+                id="first-name-validation-error-message"
+                aria-live="assertive"
+              >
+                This field is required
+              </p>
+            </li>
+
+            <!-- Last Name Input Field -->
+            <li
+              class="contact-form__input-field contact-form__input-field--type-text"
+            >
+              <label for="last-name" class="contact-form__input-label"
+                ><span class="contact-form__input-label-text"
+                  >Last Name</span
+                ></label
+              >
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                class="contact-form__input contact-form__input--type-text"
+                required
+                aria-describedby="last-name-validation-error-message"
+              />
+
+              <p
+                class="contact-form__input-validation-error-message"
+                id="last-name-validation-error-message"
+                aria-live="assertive"
+              >
+                This field is required
+              </p>
+            </li>
+
+            <!-- Email Address Input Field -->
+            <li
+              class="contact-form__input-field contact-form__input-field--type-email"
+            >
+              <label for="email-address" class="contact-form__input-label"
+                ><span class="contact-form__input-label-text"
+                  >Email Address</span
+                ></label
+              >
+              <input
+                type="email"
+                name="email-address"
+                id="email-address"
+                class="contact-form__input contact-form__input--type-email"
+                required
+                aria-describedby="email-address-validation-error-message"
+              />
+
+              <p
+                class="contact-form__input-validation-error-message"
+                id="email-address-validation-error-message"
+                aria-live="assertive"
+              >
+                Please enter a valid email address
+              </p>
+            </li>
+
+            <!-- Query Type Input Field Group -->
+            <li class="contact-form__input-field-group">
+              <fieldset
+                class="contact-form__input-fieldset contact-form__input-fieldset--type-radio"
+                aria-required="true"
+                aria-describedby="query-type-validation-error-message"
+              >
+                <legend class="contact-form__input-fieldset-legend">
+                  <span class="contact-form__input-fieldset-legend-text"
+                    >Query Type</span
+                  >
+                </legend>
+
+                <!-- General Enquiry Input Field -->
+                <div
+                  class="contact-form__input-field contact-form__input-field--type-radio"
+                >
+                  <input
+                    type="radio"
+                    name="query-type"
+                    id="general-enquiry"
+                    class="contact-form__input contact-form__input--type-radio"
+                  />
+                  <label
+                    for="general-enquiry"
+                    class="contact-form__input-label contact-form__input-label--type-radio"
+                    ><span class="contact-form__input-label-text"
+                      >General Enquiry</span
+                    ></label
+                  >
+                </div>
+
+                <!-- Support Request Input Field -->
+                <div
+                  class="contact-form__input-field contact-form__input-field--type-radio"
+                >
+                  <input
+                    type="radio"
+                    name="query-type"
+                    id="support-request"
+                    class="contact-form__input contact-form__input--type-radio"
+                  />
+                  <label
+                    for="support-request"
+                    class="contact-form__input-label contact-form__input-label--type-radio"
+                    ><span class="contact-form__input-label-text"
+                      >Support Request</span
+                    ></label
+                  >
+                </div>
+              </fieldset>
+
+              <p
+                class="contact-form__input-validation-error-message"
+                id="query-type-validation-error-message"
+                aria-live="assertive"
+              >
+                Please select a query type
+              </p>
+            </li>
+
+            <!-- Message Input Field -->
+            <li
+              class="contact-form__input-field contact-form__input-field--type-textarea"
+            >
+              <label for="message" class="contact-form__input-label"
+                ><span class="contact-form__input-label-text"
+                  >Message</span
+                ></label
+              >
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                class="contact-form__input contact-form__input--type-textarea"
+                required
+                aria-describedby="message-validation-error-message"
+              ></textarea>
+
+              <p
+                class="contact-form__input-validation-error-message"
+                id="message-validation-error-message"
+                aria-live="assertive"
+              >
+                This field is required
+              </p>
+            </li>
+
+            <!-- Contact Consent Input Field -->
+            <li
+              class="contact-form__input-field contact-form__input-field--type-checkbox"
+            >
+              <input
+                type="checkbox"
+                name="contact-consent"
+                id="contact-consent"
+                class="contact-form__input contact-form__input--type-checkbox"
+                required
+                aria-describedby="contact-consent-validation-error-message"
+              />
+              <label for="contact-consent" class="contact-form__input-label"
+                ><span class="contact-form__input-label-text"
+                  >I consent to being contacted by the team</span
+                ></label
+              >
+
+              <p
+                class="contact-form__input-validation-error-message"
+                id="contact-consent-validation-error-message"
+                aria-live="assertive"
+              >
+                To submit this form, please consent to being contacted
+              </p>
+            </li>
+          </ul>
+
+          <!-- Submit Button -->
+          <button type="submit" class="contact-form__submit-button">
+            Submit
+          </button>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
