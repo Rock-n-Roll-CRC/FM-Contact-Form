@@ -27,7 +27,6 @@ export const renderValidationError = (inputField: HTMLDivElement): void => {
     inputField.classList.contains("contact-form__input-field--type-email") ||
     inputField.classList.contains("contact-form__input-field--type-textarea")
   ) {
-    console.log(inputField.querySelector(".contact-form__input"));
     inputField
       .querySelector(".contact-form__input")
       ?.classList.add("contact-form__input--invalidated");

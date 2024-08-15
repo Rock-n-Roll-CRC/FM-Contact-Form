@@ -49,4 +49,5 @@ Users should be able to:
 - Frontend Mentor - [@Rock-n-Roll-CRC](https://www.frontendmentor.io/profile/Rock-n-Roll-CRC)
 - Codewars - [@Rock-n-Roll-CRC](https://www.codewars.com/users/Rock-n-Roll-CRC)
 
+\
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0ffb1efa-e9fc-4e53-91a5-8a2ccbe061d7/deploy-status)](https://app.netlify.com/sites/fm-contact-form-danil-dikhtyar/deploys)
